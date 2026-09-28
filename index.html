@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHANTOM | Discord Server</title>
+    
+    <!-- Подключение футуристичного геймерского шрифта -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Общие настройки стиля */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth; /* Плавный скролл при нажатии на Правила */
+        }
+
+        /* 1. Черная основа */
+        body {
+            background-color: #0b0c10;
+            color: #c5c6c7;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 60px;
+        }
+
+        /* Красивая верхняя панель (Хедер) вместо бокового меню */
+        .navbar {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            border-bottom: 1px solid rgba(69, 243, 255, 0.1);
+        }
+
+        .nav-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: 2px;
+        }
+
+        /* Закругленная кнопка "Правила" вверху */
+        .nav-btn {
+            background-color: #1f2833;
+            color: #c5c6c7;
+            border: 1px solid rgba(69, 243, 255, 0.4);
+            padding: 10px 25px;
+            border-radius: 20px; /* 2. Круглые углы */
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-btn:hover {
+            background-color: #45f3ff; /* Синий акцент */
+            color: #0b0c10;
+            box-shadow: 0 0 15px rgba(69, 243, 255, 0.5);
+        }
+
+        /* Главный контейнер по центру */
+        .main-container {
+            width: 100%;
+            max-width: 750px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px 20px 20px;
+            gap: 50px;
+        }
+
+        /* 4. Заголовок темы */
+        .server-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 76px; 
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: 6px;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #ffffff, #45f3ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(69, 243, 255, 0.15);
+        }
+
+        .server-subtitle {
+            font-size: 18px;
+            color: #66fcf1;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        /* Главная кнопка входа */
+        .join-btn {
+            display: inline-block;
+            padding: 16px 45px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+            background: linear-gradient(135deg, #1f2833, #45f3ff);
+            text-decoration: none;
+            border-radius: 50px; /* Сильное закругление */
+            box-shadow: 0 5px 25px rgba(69, 243, 255, 0.2);
+            transition: all 0.4s ease;
+        }
+
+        .join-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 35px rgba(69, 243, 255, 0.6);
+        }
+
+        /* Красивые карточки для инфы и правил */
+        .info-card {
+            width: 100%;
+            background: rgba(31, 40, 51, 0.6);
+            padding: 40px;
+            border-radius: 24px; /* Круглые углы */
+            border: 1px solid rgba(69, 243, 255, 0.15);
+            text-align: left;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .info-card h2 {
+            color: #ffffff;
+            font-size: 28px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(69, 243, 255, 0.2);
+            padding-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-card p {
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        /* Список правил в столбик */
+        .rules-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .rules-list li {
+            font-size: 16px;
+            line-height: 1.5;
+            padding: 14px 20px;
+            background: #0b0c10;
+            border-radius: 16px; /* Закругляем плашки правил */
+            border-left: 4px solid #45f3ff; /* Синий маркер */
+            box-shadow: inset 0 0 10px rgba(69, 243, 255, 0.02);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <nav class="navbar">
+        <div class="nav-logo">PHANTOM</div>
+        <a href="#rules-block" class="nav-btn">Правила</a>
+    </nav>
+
+    <!-- Основной блок сайта -->
+    <main class="main-container">
+        
+        <!-- Блок заголовка -->
+        <section>
+            <h1 class="server-title">PHANTOM</h1>
+            <p class="server-subtitle">Добро пожаловать в игровое сообщество</p>
+            <a href="https://discord.gg" class="join-btn" target="_blank">Присоединиться к серверу</a>
+        </section>
+
+        <!-- Карточка "О сервере" -->
+        <section class="info-card">
+            <h2>О сервере</h2>
+            <p>PHANTOM — это место, где собираются лучшие игроки. Общайся на любые темы, делись мемами и проводи время по кайфу. А самое главное — здесь ты всегда сможешь найти себе чёткого тиммейта для GTA 5, чтобы вместе проходить ограбления или просто разносить онлайн!</p>
+        </section>
+
+        <!-- Карточка "Правила" (Сюда перекинет при клике на кнопку вверху) -->
+        <section class="info-card" id="rules-block">
+            <h2>Правила сервера</h2>
+            <ul class="rules-list">
+                <li><strong>1.</strong> Уважайте друг друга и не будьте toxic душнилами.</li>
+                <li><strong>2.</strong> Никаких оскорблений родителей — за это сразу бан без шанса вернуться.</li>
+                <li><strong>3.</strong> Не засирайте чаты спамом, флудом и миллионом одинаковых гифок.</li>
+                <li><strong>4.</strong> Не орите в микрофон и настройте его, чтобы на фоне не было шумов.</li>
+                <li><strong>5.</strong> Не включайте музыку или звуки в голосовых без согласия всей комнаты.</li>
+                <li><strong>6.</strong> Ищите тимейтов для игр в специальных каналах, а не флудите в общем чате.</li>
+                <li><strong>7.</strong> Никакой рекламы чужих серверов или стримов без моего разрешения.</li>
+                <li><strong>8.</strong> Никакой политики, религии и межнациональных срачей — мы тут отдыхаем.</li>
+                <li><strong>9.</strong> Запрещен любой шок-контент, порнуха (NSFW) и вредоносные ссылки.</li>
+                <li><strong>10.</strong> Слушайте модераторов и админов. Моё слово как создателя — закон.</li>
+            </ul>
+        </section>
+
+    </main>
+
+</body>
+</html>
